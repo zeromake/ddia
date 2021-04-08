@@ -1,0 +1,260 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>第三部分：衍生数据 - 设计数据密集型应用</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="不懂数据库的全栈工程师不是好架构师">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="favicon.png">
+        
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        
+        <link rel="stylesheet" href="css/print.css" media="print">
+        
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html"><strong aria-hidden="true">1.</strong> 简介</a></li><li class="chapter-item expanded "><a href="preface.html"><strong aria-hidden="true">2.</strong> 序言</a></li><li class="chapter-item expanded "><a href="part-i.html"><strong aria-hidden="true">3.</strong> 第一部分：数据系统的基石</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch1.html"><strong aria-hidden="true">3.1.</strong> 第一章：可靠性、可伸缩性、可维护性</a></li><li class="chapter-item expanded "><a href="ch2.html"><strong aria-hidden="true">3.2.</strong> 第二章：数据模型与查询语言</a></li><li class="chapter-item expanded "><a href="ch3.html"><strong aria-hidden="true">3.3.</strong> 第三章：存储与检索</a></li><li class="chapter-item expanded "><a href="ch4.html"><strong aria-hidden="true">3.4.</strong> 第四章：编码与演化</a></li></ol></li><li class="chapter-item expanded "><a href="part-ii.html"><strong aria-hidden="true">4.</strong> 第二部分：分布式数据</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch5.html"><strong aria-hidden="true">4.1.</strong> 第五章：复制</a></li><li class="chapter-item expanded "><a href="ch6.html"><strong aria-hidden="true">4.2.</strong> 第六章：分区</a></li><li class="chapter-item expanded "><a href="ch7.html"><strong aria-hidden="true">4.3.</strong> 第七章：事务</a></li><li class="chapter-item expanded "><a href="ch8.html"><strong aria-hidden="true">4.4.</strong> 第八章：分布式系统的麻烦</a></li><li class="chapter-item expanded "><a href="ch9.html"><strong aria-hidden="true">4.5.</strong> 第九章：一致性与共识</a></li></ol></li><li class="chapter-item expanded "><a href="part-iii.html" class="active"><strong aria-hidden="true">5.</strong> 第三部分：衍生数据</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch10.html"><strong aria-hidden="true">5.1.</strong> 第十章：批处理</a></li><li class="chapter-item expanded "><a href="ch11.html"><strong aria-hidden="true">5.2.</strong> 第十一章：流处理</a></li><li class="chapter-item expanded "><a href="ch12.html"><strong aria-hidden="true">5.3.</strong> 第十二章：数据系统的未来</a></li></ol></li><li class="chapter-item expanded "><a href="glossary.html"><strong aria-hidden="true">6.</strong> 术语表</a></li><li class="chapter-item expanded "><a href="colophon.html"><strong aria-hidden="true">7.</strong> 后记</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">设计数据密集型应用</h1>
+
+                    <div class="right-buttons">
+                        
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="第三部分衍生数据"><a class="header" href="#第三部分衍生数据">第三部分：衍生数据</a></h1>
+<p>在本书的<a href="part-i.html">第一部分</a>和<a href="part-ii.html">第二部分</a>中，我们自底向上地把所有关于分布式数据库的主要考量都过了一遍。从数据在磁盘上的布局，一直到出现故障时分布式系统一致性的局限。但所有的讨论都假定了应用中只用了一种数据库。</p>
+<p>现实世界中的数据系统往往更为复杂。大型应用程序经常需要以多种方式访问和处理数据，没有一个数据库可以同时满足所有这些不同的需求。因此应用程序通常组合使用多种组件：数据存储，索引，缓存，分析系统，等等，并实现在这些组件中移动数据的机制。</p>
+<p>本书的最后一部分，会研究将多个不同数据系统（可能有着不同数据模型，并针对不同的访问模式进行优化）集成为一个协调一致的应用架构时，会遇到的问题。软件供应商经常会忽略这一方面的生态建设，并声称他们的产品能够满足你的所有需求。在现实世界中，集成不同的系统是实际应用中最重要的事情之一。</p>
+<h2 id="记录和衍生数据系统"><a class="header" href="#记录和衍生数据系统">记录和衍生数据系统</a></h2>
+<p>从高层次上看，存储和处理数据的系统可以分为两大类：</p>
+<h4 id="记录系统system-of-record"><a class="header" href="#记录系统system-of-record">记录系统（System of record）</a></h4>
+<p><strong>记录系统</strong>，也被称为<strong>真相源（source of truth）</strong>，持有数据的权威版本。当新的数据进入时（例如，用户输入）首先会记录在这里。每个事实正正好好表示一次（表示通常是<strong>标准化的（normalized）</strong>）。如果其他系统和<strong>记录系统</strong>之间存在任何差异，那么记录系统中的值是正确的（根据定义）。</p>
+<h4 id="衍生数据系统derived-data-systems"><a class="header" href="#衍生数据系统derived-data-systems">衍生数据系统（Derived data systems）</a></h4>
+<p><strong>衍生系统</strong>中的数据，通常是另一个系统中的现有数据以某种方式进行转换或处理的结果。如果丢失衍生数据，可以从原始来源重新创建。典型的例子是<strong>缓存（cache）</strong>：如果数据在缓存中，就可以由缓存提供服务；如果缓存不包含所需数据，则降级由底层数据库提供。非规范化的值，索引和物化视图亦属此类。在推荐系统中，预测汇总数据通常衍生自用户日志。</p>
+<p>从技术上讲，衍生数据是<strong>冗余的（redundant）</strong>，因为它重复了已有的信息。但是衍生数据对于获得良好的只读查询性能通常是至关重要的。它通常是非规范化的。可以从单个源头衍生出多个不同的数据集，使你能从不同的“视角”洞察数据。</p>
+<p>并不是所有的系统都在其架构中明确区分<strong>记录系统</strong>和<strong>衍生数据系统</strong>，但是这是一种有用的区分方式，因为它明确了系统中的数据流：系统的哪一部分具有哪些输入和哪些输出，以及它们如何相互依赖。</p>
+<p>大多数数据库，存储引擎和查询语言，本质上既不是记录系统也不是衍生系统。数据库只是一个工具：如何使用它取决于你自己。<strong>记录系统和衍生数据系统之间的区别不在于工具，而在于应用程序中的使用方式。</strong></p>
+<p>通过梳理数据的衍生关系，可以清楚地理解一个令人困惑的系统架构。这将贯穿本书的这一部分。</p>
+<h2 id="章节概述"><a class="header" href="#章节概述">章节概述</a></h2>
+<p>我们将从<a href="ch10.html">第十章</a>开始，研究例如MapReduce这样 <strong>面向批处理（batch-oriented）</strong> 的数据流系统。对于建设大规模数据系统，我们将看到，它们提供了优秀的工具和思想。<a href="ch11.html">第十一章</a>将把这些思想应用到 <strong>流式数据（data streams）</strong> 中，使我们能用更低的延迟完成同样的任务。<a href="ch12.html">第十二章</a>将对本书进行总结，探讨如何使用这些工具来构建可靠，可伸缩和可维护的应用。</p>
+<h2 id="索引"><a class="header" href="#索引">索引</a></h2>
+<ol start="10">
+<li><a href="ch10.html">批处理</a></li>
+<li><a href="ch11.html">流处理</a></li>
+<li><a href="ch12.html">数据系统的未来</a></li>
+</ol>
+<hr />
+<table><thead><tr><th>上一章</th><th>目录</th><th>下一章</th></tr></thead><tbody>
+<tr><td><a href="ch9.html">第九章：一致性与共识</a></td><td><a href="README.html">设计数据密集型应用</a></td><td><a href="ch10.html">第十章：批处理</a></td></tr>
+</tbody></table>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="ch9.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="ch10.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="ch9.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="ch10.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

@@ -1,0 +1,363 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>术语表 - 设计数据密集型应用</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="不懂数据库的全栈工程师不是好架构师">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="favicon.png">
+        
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        
+        <link rel="stylesheet" href="css/print.css" media="print">
+        
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html"><strong aria-hidden="true">1.</strong> 简介</a></li><li class="chapter-item expanded "><a href="preface.html"><strong aria-hidden="true">2.</strong> 序言</a></li><li class="chapter-item expanded "><a href="part-i.html"><strong aria-hidden="true">3.</strong> 第一部分：数据系统的基石</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch1.html"><strong aria-hidden="true">3.1.</strong> 第一章：可靠性、可伸缩性、可维护性</a></li><li class="chapter-item expanded "><a href="ch2.html"><strong aria-hidden="true">3.2.</strong> 第二章：数据模型与查询语言</a></li><li class="chapter-item expanded "><a href="ch3.html"><strong aria-hidden="true">3.3.</strong> 第三章：存储与检索</a></li><li class="chapter-item expanded "><a href="ch4.html"><strong aria-hidden="true">3.4.</strong> 第四章：编码与演化</a></li></ol></li><li class="chapter-item expanded "><a href="part-ii.html"><strong aria-hidden="true">4.</strong> 第二部分：分布式数据</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch5.html"><strong aria-hidden="true">4.1.</strong> 第五章：复制</a></li><li class="chapter-item expanded "><a href="ch6.html"><strong aria-hidden="true">4.2.</strong> 第六章：分区</a></li><li class="chapter-item expanded "><a href="ch7.html"><strong aria-hidden="true">4.3.</strong> 第七章：事务</a></li><li class="chapter-item expanded "><a href="ch8.html"><strong aria-hidden="true">4.4.</strong> 第八章：分布式系统的麻烦</a></li><li class="chapter-item expanded "><a href="ch9.html"><strong aria-hidden="true">4.5.</strong> 第九章：一致性与共识</a></li></ol></li><li class="chapter-item expanded "><a href="part-iii.html"><strong aria-hidden="true">5.</strong> 第三部分：衍生数据</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch10.html"><strong aria-hidden="true">5.1.</strong> 第十章：批处理</a></li><li class="chapter-item expanded "><a href="ch11.html"><strong aria-hidden="true">5.2.</strong> 第十一章：流处理</a></li><li class="chapter-item expanded "><a href="ch12.html"><strong aria-hidden="true">5.3.</strong> 第十二章：数据系统的未来</a></li></ol></li><li class="chapter-item expanded "><a href="glossary.html" class="active"><strong aria-hidden="true">6.</strong> 术语表</a></li><li class="chapter-item expanded "><a href="colophon.html"><strong aria-hidden="true">7.</strong> 后记</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">设计数据密集型应用</h1>
+
+                    <div class="right-buttons">
+                        
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="术语表-draft"><a class="header" href="#术语表-draft">术语表 【DRAFT】</a></h1>
+<blockquote>
+<p>请注意，本术语表中的定义简短而简单，旨在传达核心思想，而不是术语的完整细微之处。 有关更多详细信息，请参阅正文中的参考资料。</p>
+</blockquote>
+<p>[TOC]</p>
+<h3 id="异步asynchronous"><a class="header" href="#异步asynchronous">异步（asynchronous）</a></h3>
+<p>不等待某些事情完成（例如，将数据发送到网络中的另一个节点），并且不会假设要花多长时间。请参阅第153页上的“同步与异步复制”，第284页上的“同步与异步网络”，以及第306页上的“系统模型与现实”。</p>
+<h3 id="原子atomic"><a class="header" href="#原子atomic">原子（atomic）</a></h3>
+<p>1.在并发操作的上下文中：描述一个在单个时间点看起来生效的操作，所以另一个并发进程永远不会遇到处于“半完成”状态的操作。另见隔离。</p>
+<p>2.在事务的上下文中：将一些写入操作分为一组，这组写入要么全部提交成功，要么遇到错误时全部回滚。参见第223页的“原子性”和第354页的“原子提交和两阶段提交（2PC）”。</p>
+<h3 id="背压backpressure"><a class="header" href="#背压backpressure">背压（backpressure）</a></h3>
+<p>接收方接收数据速度较慢时，强制降低发送方的数据发送速度。也称为流量控制。请参阅第441页上的“消息系统”。</p>
+<h3 id="批处理batch-process"><a class="header" href="#批处理batch-process">批处理（batch process）</a></h3>
+<p>一种计算，它将一些固定的（通常是大的）数据集作为输入，并将其他一些数据作为输出，而不修改输入。见第十章。</p>
+<h3 id="边界bounded"><a class="header" href="#边界bounded">边界（bounded）</a></h3>
+<p>有一些已知的上限或大小。例如，网络延迟情况（请参阅“超时和未定义的延迟”在本页281）和数据集（请参阅第11章的介绍）。</p>
+<h3 id="拜占庭故障byzantine-fault"><a class="header" href="#拜占庭故障byzantine-fault">拜占庭故障（Byzantine fault）</a></h3>
+<p>表现异常的节点，这种异常可能以任意方式出现，例如向其他节点发送矛盾或恶意消息。请参阅第304页上的“拜占庭故障”。</p>
+<h3 id="缓存cache"><a class="header" href="#缓存cache">缓存（cache）</a></h3>
+<p>一种组件，通过存储最近使用过的数据，加快未来对相同数据的读取速度。缓存中通常存放部分数据：因此，如果缓存中缺少某些数据，则必须从某些底层较慢的数据存储系统中，获取完整的数据副本。</p>
+<h3 id="cap定理cap-theorem"><a class="header" href="#cap定理cap-theorem">CAP定理（CAP theorem）</a></h3>
+<p>一个被广泛误解的理论结果，在实践中是没有用的。参见第336页的“CAP定理”。</p>
+<h3 id="因果关系causality"><a class="header" href="#因果关系causality">因果关系（causality）</a></h3>
+<p>事件之间的依赖关系，当一件事发生在另一件事情之前。例如，后面的事件是对早期事件的回应，或者依赖于更早的事件，或者应该根据先前的事件来理解。请参阅第186页上的“发生之前的关系和并发性”和第339页上的“排序和因果关系”。</p>
+<h3 id="共识consensus"><a class="header" href="#共识consensus">共识（consensus）</a></h3>
+<p>分布式计算的一个基本问题，就是让几个节点同意某些事情（例如，哪个节点应该是数据库集群的领导者）。问题比乍看起来要困难得多。请参阅第364页上的“容错共识”。</p>
+<h3 id="数据仓库data-warehouse"><a class="header" href="#数据仓库data-warehouse">数据仓库（data warehouse）</a></h3>
+<p>一个数据库，其中来自几个不同的OLTP系统的数据已经被合并和准备用于分析目的。请参阅第91页上的“数据仓库”。</p>
+<h3 id="声明式declarative"><a class="header" href="#声明式declarative">声明式（declarative）</a></h3>
+<p>描述某些东西应有的属性，但不知道如何实现它的确切步骤。在查询的上下文中，查询优化器采用声明性查询并决定如何最好地执行它。请参阅第42页上的“数据的查询语言”。</p>
+<h3 id="非规范化denormalize"><a class="header" href="#非规范化denormalize">非规范化（denormalize）</a></h3>
+<p>为了加速读取，在标准数据集中引入一些冗余或重复数据，通常采用缓存或索引的形式。非规范化的值是一种预先计算的查询结果，像物化视图。请参见“单对象和多对象操作”（第228页）和“从同一事件日志中派生多个视图”（第461页）。</p>
+<h3 id="衍生数据derived-data"><a class="header" href="#衍生数据derived-data">衍生数据（derived data）</a></h3>
+<p>一种数据集，根据其他数据通过可重复运行的流程创建。必要时，你可以运行该流程再次创建衍生数据。衍生数据通常用于提高特定数据的读取速度。常见的衍生数据有索引、缓存和物化视图。参见第三部分的介绍。</p>
+<h3 id="确定性deterministic"><a class="header" href="#确定性deterministic">确定性（deterministic）</a></h3>
+<p>描述一个函数，如果给它相同的输入，则总是产生相同的输出。这意味着它不能依赖于随机数字、时间、网络通信或其他不可预测的事情。</p>
+<h3 id="分布式distributed"><a class="header" href="#分布式distributed">分布式（distributed）</a></h3>
+<p>在由网络连接的多个节点上运行。对于部分节点故障，具有容错性：系统的一部分发生故障时，其他部分仍可以正常工作，通常情况下，软件无需了解故障相关的确切情况。请参阅第274页上的“故障和部分故障”。</p>
+<h3 id="持久durable"><a class="header" href="#持久durable">持久（durable）</a></h3>
+<p>以某种方式存储数据，即使发生各种故障，也不会丢失数据。请参阅第226页上的“持久性”。</p>
+<h3 id="etlextract-transform-load"><a class="header" href="#etlextract-transform-load">ETL（Extract-Transform-Load）</a></h3>
+<p>提取-转换-加载（Extract-Transform-Load）。从源数据库中提取数据，将其转换为更适合分析查询的形式，并将其加载到数据仓库或批处理系统中的过程。请参阅第91页上的“数据仓库”。</p>
+<h3 id="故障切换failover"><a class="header" href="#故障切换failover">故障切换（failover）</a></h3>
+<p>在具有单一领导者的系统中，故障切换是将领导角色从一个节点转移到另一个节点的过程。请参阅第156页的“处理节点故障”。</p>
+<h3 id="容错fault-tolerant"><a class="header" href="#容错fault-tolerant">容错（fault-tolerant）</a></h3>
+<p>如果出现问题（例如，机器崩溃或网络连接失败），可以自动恢复。请参阅第6页上的“可靠性”。</p>
+<h3 id="流量控制flow-control"><a class="header" href="#流量控制flow-control">流量控制（flow control）</a></h3>
+<p>见背压（backpressure）。</p>
+<h3 id="追随者follower"><a class="header" href="#追随者follower">追随者（follower）</a></h3>
+<p>一种数据副本，仅处理领导者发出的数据变更，不直接接受来自客户端的任何写入。也称为辅助、仆从、只读副本或热备份。请参阅第152页上的“领导和追随者”。</p>
+<h3 id="全文检索full-text-search"><a class="header" href="#全文检索full-text-search">全文检索（full-text search）</a></h3>
+<p>通过任意关键字来搜索文本，通常具有附加特征，例如匹配类似的拼写词或同义词。全文索引是一种支持这种查询的次级索引。请参阅第88页上的“全文搜索和模糊索引”。</p>
+<h3 id="图graph"><a class="header" href="#图graph">图（graph）</a></h3>
+<p>一种数据结构，由顶点（可以指向的东西，也称为节点或实体）和边（从一个顶点到另一个顶点的连接，也称为关系或弧）组成。请参阅第49页上的“和图相似的数据模型”。 </p>
+<h3 id="散列hash"><a class="header" href="#散列hash">散列（hash）</a></h3>
+<p>将输入转换为看起来像随机数值的函数。相同的输入会转换为相同的数值，不同的输入一般会转换为不同的数值，也可能转换为相同数值（也被称为冲突）。请参阅第203页的“根据键的散列值分隔”。</p>
+<h3 id="幂等idempotent"><a class="header" href="#幂等idempotent">幂等（idempotent）</a></h3>
+<p>用于描述一种操作可以安全地重试执行，即执行多次的效果和执行一次的效果相同。请参阅第478页的“幂等”。</p>
+<h3 id="索引index"><a class="header" href="#索引index">索引（index）</a></h3>
+<p>一种数据结构。通过索引，你可以根据特定字段的值，在所有数据记录中进行高效检索。请参阅第70页的“让数据库更强大的数据结构”。</p>
+<h3 id="隔离性isolation"><a class="header" href="#隔离性isolation">隔离性（isolation）</a></h3>
+<p>在事务上下文中，用于描述并发执行事务的互相干扰程度。串行运行具有最强的隔离性，不过其它程度的隔离也通常被使用。请参阅第225页的“隔离”。</p>
+<h3 id="连接join"><a class="header" href="#连接join">连接（join）</a></h3>
+<p>汇集有共同点的记录。在一个记录与另一个记录有关（外键，文档参考，图中的边）的情况下最常用，查询需要获取参考所指向的记录。请参阅第33页上的“多对一和多对多关系”和第393页上的“减少端连接和分组”。</p>
+<h3 id="领导者leader"><a class="header" href="#领导者leader">领导者（leader）</a></h3>
+<p>当数据或服务被复制到多个节点时，由领导者分发已授权变更的数据副本。领导者可以通过某些协议选举产生，也可以由管理者手动选择。也被称为主人。请参阅第152页的“领导者和追随者”。</p>
+<h3 id="线性化linearizable"><a class="header" href="#线性化linearizable">线性化（linearizable）</a></h3>
+<p>表现为系统中只有一份通过原子操作更新的数据副本。请参阅第324页的“线性化”。</p>
+<h3 id="局部性locality"><a class="header" href="#局部性locality">局部性（locality）</a></h3>
+<p>一种性能优化方式，如果经常在相同的时间请求一些离散数据，把这些数据放到一个位置。请参阅第41页的“请求数据的局部性”。</p>
+<h3 id="锁lock"><a class="header" href="#锁lock">锁（lock）</a></h3>
+<p>一种保证只有一个线程、节点或事务可以访问的机制，如果其它线程、节点或事务想访问相同元素，则必须等待锁被释放。请参阅第257页的“两段锁（2PL）”和301页的“领导者和锁”。</p>
+<h3 id="日志log"><a class="header" href="#日志log">日志（log）</a></h3>
+<p>日志是一个只能以追加方式写入的文件，用于存放数据。预写式日志用于在存储引擎崩溃时恢复数据（请参阅第82页的“使二叉树更稳定”）；结构化日志存储引擎使用日志作为它的主要存储格式（请参阅第76页的“有序字符串表和日志结构的合并树”）；复制型日志用于把写入从领导者复制到追随者（请参阅第152页的“领导者和追随者”）；事件性日志可以表现为数据流（请参阅第446页的“分段日志”）。</p>
+<h3 id="物化materialize"><a class="header" href="#物化materialize">物化（materialize）</a></h3>
+<p>急切地计算并写出结果，而不是在请求时计算。请参阅第101页的“聚合：数据立方和物化视图”和419页的“中间状态的物化”。</p>
+<h3 id="节点node"><a class="header" href="#节点node">节点（node）</a></h3>
+<p>计算机上运行的一些软件的实例，通过网络与其他节点通信以完成某项任务。</p>
+<h3 id="规范化normalized"><a class="header" href="#规范化normalized">规范化（normalized）</a></h3>
+<p>以没有冗余或重复的方式进行结构化。 在规范化数据库中，当某些数据发生变化时，您只需要在一个地方进行更改，而不是在许多不同的地方复制很多次。 请参阅第33页上的“多对一和多对多关系”。</p>
+<h3 id="olaponline-analytic-processing"><a class="header" href="#olaponline-analytic-processing">OLAP（Online Analytic Processing）</a></h3>
+<p>在线分析处理。 通过对大量记录进行聚合（例如，计数，总和，平均）来表征的访问模式。 请参阅第90页上的“交易处理或分析？”。</p>
+<h3 id="oltponline-transaction-processing"><a class="header" href="#oltponline-transaction-processing">OLTP（Online Transaction Processing）</a></h3>
+<p>在线事务处理。 访问模式的特点是快速查询，读取或写入少量记录，这些记录通常通过键索引。 请参阅第90页上的“交易处理或分析？”。</p>
+<h3 id="分区partitioning"><a class="header" href="#分区partitioning">分区（partitioning）</a></h3>
+<p>将单机上的大型数据集或计算结果拆分为较小部分，并将其分布到多台机器上。 也称为分片。 见第6章。</p>
+<h3 id="百分位点percentile"><a class="header" href="#百分位点percentile">百分位点（percentile）</a></h3>
+<p>通过计算有多少值高于或低于某个阈值来衡量值分布的方法。 例如，某个时间段的第95个百分位响应时间是时间t，则该时间段中，95％的请求完成时间小于t，5％的请求完成时间要比t长。 请参阅第13页上的“描述性能”。</p>
+<h3 id="主键primary-key"><a class="header" href="#主键primary-key">主键（primary key）</a></h3>
+<p>唯一标识记录的值（通常是数字或字符串）。 在许多应用程序中，主键由系统在创建记录时生成（例如，按顺序或随机）; 它们通常不由用户设置。 另请参阅二级索引。</p>
+<h3 id="法定人数quorum"><a class="header" href="#法定人数quorum">法定人数（quorum）</a></h3>
+<p>在操作完成之前，需要对操作进行投票的最少节点数量。 请参阅第179页上的“读写的法定人数”。</p>
+<h3 id="再平衡rebalance"><a class="header" href="#再平衡rebalance">再平衡（rebalance）</a></h3>
+<p>将数据或服务从一个节点移动到另一个节点以实现负载均衡。 请参阅第209页上的“再平衡分区”。</p>
+<h3 id="复制replication"><a class="header" href="#复制replication">复制（replication）</a></h3>
+<p>在几个节点（副本）上保留相同数据的副本，以便在某些节点无法访问时，数据仍可访问。请参阅第5章。</p>
+<h3 id="模式schema"><a class="header" href="#模式schema">模式（schema）</a></h3>
+<p>一些数据结构的描述，包括其字段和数据类型。 可以在数据生命周期的不同点检查某些数据是否符合模式（请参阅第39页上的“文档模型中的模式灵活性”），模式可以随时间变化（请参阅第4章）。</p>
+<h3 id="次级索引secondary-index"><a class="header" href="#次级索引secondary-index">次级索引（secondary index）</a></h3>
+<p>与主要数据存储器一起维护的附加数据结构，使您可以高效地搜索与某种条件相匹配的记录。 请参阅第85页上的“其他索引结构”和第206页上的“分区和二级索引”。</p>
+<h3 id="可序列化serializable"><a class="header" href="#可序列化serializable">可序列化（serializable）</a></h3>
+<p>保证多个并发事务同时执行时，它们的行为与按顺序逐个执行事务相同。 请参阅第251页上的“可序列化”。</p>
+<h3 id="无共享shared-nothing"><a class="header" href="#无共享shared-nothing">无共享（shared-nothing）</a></h3>
+<p>与共享内存或共享磁盘架构相比，独立节点（每个节点都有自己的CPU，内存和磁盘）通过传统网络连接。 见第二部分的介绍。</p>
+<h3 id="偏斜skew"><a class="header" href="#偏斜skew">偏斜（skew）</a></h3>
+<p>1.各分区负载不平衡，例如某些分区有大量请求或数据，而其他分区则少得多。也被称为热点。请参阅第205页上的“工作负载偏斜和减轻热点”和第407页上的“处理偏斜”。</p>
+<p>2.时间线异常导致事件以不期望的顺序出现。 请参阅第237页上的“快照隔离和可重复读取”中的关于读取偏斜的讨论，第246页上的“写入偏斜和模糊”中的写入偏斜以及第291页上的“订购事件的时间戳”中的时钟偏斜。</p>
+<h3 id="脑裂split-brain"><a class="header" href="#脑裂split-brain">脑裂（split brain）</a></h3>
+<p>两个节点同时认为自己是领导者的情况，这种情况可能违反系统担保。 请参阅第156页的“处理节点中断”和第300页的“真相由多数定义”。</p>
+<h3 id="存储过程stored-procedure"><a class="header" href="#存储过程stored-procedure">存储过程（stored procedure）</a></h3>
+<p>一种对事务逻辑进行编码的方式，它可以完全在数据库服务器上执行，事务执行期间无需与客户端通信。 请参阅第252页的“实际串行执行”。</p>
+<h3 id="流处理stream-process"><a class="header" href="#流处理stream-process">流处理（stream process）</a></h3>
+<p>持续运行的计算。可以持续接收事件流作为输入，并得出一些输出。 见第11章。</p>
+<h3 id="同步synchronous"><a class="header" href="#同步synchronous">同步（synchronous）</a></h3>
+<p>异步的反义词。</p>
+<h3 id="记录系统system-of-record"><a class="header" href="#记录系统system-of-record">记录系统（system of record）</a></h3>
+<p>一个保存主要权威版本数据的系统，也被称为真相的来源。首先在这里写入数据变更，其他数据集可以从记录系统衍生。 参见第三部分的介绍。</p>
+<h3 id="超时timeout"><a class="header" href="#超时timeout">超时（timeout）</a></h3>
+<p>检测故障的最简单方法之一，即在一段时间内观察是否缺乏响应。 但是，不可能知道超时是由于远程节点的问题还是网络中的问题造成的。 请参阅第281页上的“超时和无限延迟”。</p>
+<h3 id="全序total-order"><a class="header" href="#全序total-order">全序（total order）</a></h3>
+<p>一种比较事物的方法（例如时间戳），可以让您总是说出两件事中哪一件更大，哪件更小。 总的来说，有些东西是无法比拟的（不能说哪个更大或更小）的顺序称为偏序。 请参见第341页的“因果顺序不是全序”。</p>
+<h3 id="事务transaction"><a class="header" href="#事务transaction">事务（transaction）</a></h3>
+<p>为了简化错误处理和并发问题，将几个读写操作分组到一个逻辑单元中。 见第7章。</p>
+<h3 id="两阶段提交2pc-two-phase-commit"><a class="header" href="#两阶段提交2pc-two-phase-commit">两阶段提交（2PC, two-phase commit）</a></h3>
+<p>一种确保多个数据库节点全部提交或全部中止事务的算法。 请参阅第354页上的“原子提交和两阶段提交（2PC）”。</p>
+<h3 id="两阶段锁定2pl-two-phase-locking"><a class="header" href="#两阶段锁定2pl-two-phase-locking">两阶段锁定（2PL, two-phase locking）</a></h3>
+<p>一种用于实现可序列化隔离的算法，该算法通过事务获取对其读取或写入的所有数据的锁，直到事务结束。 请参阅第257页上的“两阶段锁定（2PL）”。</p>
+<h3 id="无边界unbounded"><a class="header" href="#无边界unbounded">无边界（unbounded）</a></h3>
+<p>没有任何已知的上限或大小。 反义词是边界（bounded）。</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="ch12.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="colophon.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="ch12.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="colophon.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>
