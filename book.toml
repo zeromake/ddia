@@ -3,3 +3,6 @@ title = "设计数据密集型应用"
 description = "不懂数据库的全栈工程师不是好架构师"
 author = "Martin Kleppmann"
 translation= "冯若航<fengruohang@outlook.com>"
+
+[build]
+build-dir = "docs"
